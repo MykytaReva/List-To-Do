@@ -1,0 +1,16 @@
+{% extends 'todo/base.html' %}
+
+{% block title_block %} Profile {% endblock title_block %}
+
+{% block main_content %}
+
+    <h4>My Profile</h4>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="reset">Reset</button>
+        <button type="submit">Save</button>
+    </form>
+
+
+{% endblock main_content %}

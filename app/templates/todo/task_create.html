@@ -1,0 +1,13 @@
+{% extends 'todo/base.html' %}
+
+
+{% block title_block %}HOME{% endblock title_block %}
+
+{% block main_content %}
+    To-Do List
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">Save</button>
+    </form>
+{% endblock main_content %}

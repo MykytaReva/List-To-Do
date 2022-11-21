@@ -1,0 +1,12 @@
+{% extends 'todo/base.html' %}
+
+
+{% block title_block %}HOME{% endblock title_block %}
+
+{% block main_content %}
+    <div>To-Do List</div>
+    <a href="{% url 'todo:task_create' %}"> Create new Task</a>
+    <a href="{% url 'todo:task_list' %}"> List</a>
+
+{% endblock main_content %}
+

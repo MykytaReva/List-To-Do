@@ -1,0 +1,35 @@
+{% extends 'todo/base.html' %}
+{% block title_name %}ToDo List{% endblock title_name %}
+
+{% block main_content %}
+
+<table>
+<tr>
+    <th colspan="7"><a href="{% url 'todo:task_create' %}"> Create new Task</a></th>
+</tr>
+{#<tr>#}
+{#    <th colspan="2"><a href="{% url 'todo:todo_list_active' %}">View active</a></th>#}
+{#    <th colspan="2"><a href="{% url 'todo:todo_list_completed' %}">View completed</a></th>#}
+{#    <th colspan="3"><a href="{% url 'todo:todo_list' %}">View all</a></th>#}
+{#</tr>#}
+<tr>
+    <th>Id</th>
+    <th>Task</th>
+    <th>Deadline</th>
+    <th>Status</th>
+    <th colspan="3">Actions</th>
+</tr>
+{% for do in task_list %}
+    <tr>
+        <td>{{ do.id }}</td>
+        <td>{{ do.td }}</td>
+        <td>{{ do.deadline }}</td>
+        <td>{{ do.status }}</td>
+        <td><a href="#">View</a></td>
+        <td><a href="#">Update</a></td>
+        <td><a href="#">Delete</a></td>
+    </tr>
+{% endfor %}
+
+</table>
+{% endblock main_content %}
